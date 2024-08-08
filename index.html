@@ -8,11 +8,29 @@
 </head>
 <body>
     <div class="container">
-        <h1>Unit-DSR Demo</h1>
-        <input type="file" id="input-file" accept="audio/*">
-        <button id="submit-button">Submit</button>
-        <div id="output"></div>
+        <header>
+            <h1>Unit-DSR Demo</h1>
+        </header>
+        <main>
+            <div class="audio-container">
+                <h2>Sample Audio 1</h2>
+                <audio controls>
+                    <source src="audio/sample1.mp3" type="audio/mpeg">
+                    Your browser does not support the audio element.
+                </audio>
+            </div>
+            <div class="audio-container">
+                <h2>Sample Audio 2</h2>
+                <audio controls>
+                    <source src="audio/sample2.mp3" type="audio/mpeg">
+                    Your browser does not support the audio element.
+                </audio>
+            </div>
+            <!-- 你可以添加更多的音频文件 -->
+        </main>
+        <footer>
+            <p>&copy; 2024 Unit-DSR Demo</p>
+        </footer>
     </div>
-    <script src="script.js"></script>
 </body>
 </html>
