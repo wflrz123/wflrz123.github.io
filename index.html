@@ -4,7 +4,63 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Naturally Intelligible Streaming Dysarthric Speech Reconstruction with Factorized GPT</title>
-    <link rel="stylesheet" href="style.css">
+    <style>
+        body {
+            margin: 0;
+            font-family: 'Arial', sans-serif;
+            background-color: #f0f0f0;
+            color: #333;
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #fff;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            border-radius: 10px;
+        }
+
+        header {
+            text-align: center;
+            padding: 20px 0;
+            background-color: #4CAF50;
+            color: white;
+            border-radius: 10px 10px 0 0;
+        }
+
+        main {
+            padding: 20px;
+        }
+
+        .text-container {
+            margin-bottom: 30px;
+        }
+
+        .image-container {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        .image-container img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 10px;
+        }
+
+        .audio-container {
+            margin-bottom: 30px;
+        }
+
+        footer {
+            text-align: center;
+            padding: 10px;
+            background-color: #4CAF50;
+            color: white;
+            border-radius: 0 0 10px 10px;
+        }
+    </style>
 </head>
 <body>
     <div class="container">
@@ -14,11 +70,11 @@
         <main>
             <div class="text-container">
                 <h2>Abstract</h2>
-                <p>Dysarthria patients exhibit various abnormal prosody patterns in their speech, which hinders their ability to communicate effectively. Existing research frequently focus on reconstructing dysarthric speech by correcting the content attributes. However, these methods frequently fall short in terms of quality and efficiency. Considering the stringent demands for immediacy, naturalness, and intelligibility in daily communication. We propose a streaming dysarthric speech reconstruction system based on attribute factorization and progressive correction of each attribute. We design a factorized GPT model based FACodec to generate attributes in each subspace, leveraging corrected attributes as implicit biases to progressively correct content, prosody, and acoustic details in sequence. We also integrate wait-k and chunk inference strategies to enable streaming reconstruction. Our framework significantly enhances the naturalness and intelligibility of reconstructed speech with a latency of only 800ms. On UASpeech, it achieves a 4.55 MOS on 5-point scale and shows a relative improvement of 7.71% in WER compared to the SOTA.</p>
+                <p>Dysarthria patients exhibit various abnormal prosody patterns in their speech, which hinders their ability to communicate effectively. Existing research frequently focuses on reconstructing dysarthric speech by correcting the content attributes. However, these methods frequently fall short in terms of quality and efficiency. Considering the stringent demands for immediacy, naturalness, and intelligibility in daily communication. We propose a streaming dysarthric speech reconstruction system based on attribute factorization and progressive correction of each attribute. We design a factorized GPT model based FACodec to generate attributes in each subspace, leveraging corrected attributes as implicit biases to progressively correct content, prosody, and acoustic details in sequence. We also integrate wait-k and chunk inference strategies to enable streaming reconstruction. Our framework significantly enhances the naturalness and intelligibility of reconstructed speech with a latency of only 800ms. On UASpeech, it achieves a 4.55 MOS on 5-point scale and shows a relative improvement of 7.71% in WER compared to the SOTA.</p>
             </div>
             <div class="image-container">
                 <h2>Diagram of Model</h2>
-                <img src="model.png" alt="PDF Image" width="600" height="400">
+                <img src="model.png" alt="Model Diagram">
             </div>
             <div class="audio-container">
                 <h2>Sample Audio 1</h2>
@@ -34,7 +90,6 @@
                     Your browser does not support the audio element.
                 </audio>
             </div>
-            <!-- 你可以添加更多的音频文件 -->
         </main>
         <footer>
             <p>&copy; 2024 Unit-DSR Demo</p>
