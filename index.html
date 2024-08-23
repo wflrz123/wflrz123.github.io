@@ -12,9 +12,13 @@
             <h1>Naturally Intelligible Streaming Dysarthric Speech Reconstruction with Factorized GPT</h1>
         </header>
         <main>
-            <div class="pdf-container">
-                <h2>PDF Document</h2>
-                <embed src="framework_v1.pdf" type="application/pdf" width="600" height="400">
+            <div class="text-container">
+                <h2>Abstract</h2>
+                <p>Dysarthria patients exhibit various abnormal prosody patterns in their speech, which hinders their ability to communicate effectively. Existing research frequently focus on reconstructing dysarthric speech by correcting the content attributes. However, these methods frequently fall short in terms of quality and efficiency. Considering the stringent demands for immediacy, naturalness, and intelligibility in daily communication. We propose a streaming dysarthric speech reconstruction system based on attribute factorization and progressive correction of each attribute. We design a factorized GPT model based FACodec to generate attributes in each subspace, leveraging corrected attributes as implicit biases to progressively correct content, prosody, and acoustic details in sequence. We also integrate wait-k and chunk inference strategies to enable streaming reconstruction. Our framework significantly enhances the naturalness and intelligibility of reconstructed speech with a latency of only 800ms. On UASpeech, it achieves a 4.55 MOS on 5-point scale and shows a relative improvement of 7.71% in WER compared to the SOTA.</p>
+            </div>
+            <div class="image-container">
+                <h2>Diagram of Model</h2>
+                <img src="model.png" alt="PDF Image" width="600" height="400">
             </div>
             <div class="audio-container">
                 <h2>Sample Audio 1</h2>
