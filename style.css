@@ -1,42 +1,18 @@
-body {
-    font-family: Arial, sans-serif;
-    background-color: #f4f4f4;
+/* 让 body 和 html 占满整个页面 */
+html, body {
+    height: 100%;
     margin: 0;
     padding: 0;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-    color: #333;
 }
 
+/* 设置 container 高度为 100%，确保内容占满整个页面 */
 .container {
-    text-align: center;
-    background-color: #fff;
-    padding: 20px;
-    border-radius: 10px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    width: 80%;
-    max-width: 600px;
+    min-height: 100%;
+    display: flex;
+    flex-direction: column;
 }
 
-header {
-    margin-bottom: 20px;
-}
-
-header h1 {
-    margin: 0;
-    font-size: 24px;
-}
-
+/* 让 main 部分占满剩余的空间 */
 main {
-    text-align: left;
-}
-
-.audio-container {
-    margin-bottom: 20px;
-}
-
-footer {
-    margin-top: 20px;
+    flex: 1;
 }
