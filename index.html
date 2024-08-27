@@ -25,7 +25,7 @@
         }
         
         header {
-            text-align: left;
+            text-align: center;
             padding: 20px 0;
             background-color: #4CAF50;
             color: white;
@@ -70,7 +70,7 @@
         <main>
             <div class="text-container">
                 <h2>Abstract</h2>
-                <p>Dysarthria patients exhibit various abnormal prosody patterns in their speech, which hinders their ability to communicate effectively. Existing research frequently focuses on reconstructing dysarthric speech by correcting the content attributes. However, these methods frequently fall short in terms of quality and efficiency. Considering the stringent demands for immediacy, naturalness, and intelligibility in daily communication. We propose a streaming dysarthric speech reconstruction system based on attribute factorization and progressive correction of each attribute. We design a factorized GPT model based FACodec to generate attributes in each subspace, leveraging corrected attributes as implicit biases to progressively correct content, prosody, and acoustic details in sequence. We also integrate wait-k and chunk inference strategies to enable streaming reconstruction. Our framework significantly enhances the naturalness and intelligibility of reconstructed speech with a latency of only 800ms. On UASpeech, it achieves a 4.55 MOS on 5-point scale and shows a relative improvement of 7.71% in WER compared to the SOTA.</p>
+                <p style="font-size: 20px;">Dysarthria patients exhibit various abnormal prosody patterns in their speech, which hinders their ability to communicate effectively. Existing research frequently focuses on reconstructing dysarthric speech by correcting the content attributes. However, these methods frequently fall short in terms of quality and efficiency. Considering the stringent demands for immediacy, naturalness, and intelligibility in daily communication. We propose a streaming dysarthric speech reconstruction system based on attribute factorization and progressive correction of each attribute. We design a factorized GPT model based FACodec to generate attributes in each subspace, leveraging corrected attributes as implicit biases to progressively correct content, prosody, and acoustic details in sequence. We also integrate wait-k and chunk inference strategies to enable streaming reconstruction. Our framework significantly enhances the naturalness and intelligibility of reconstructed speech with a latency of only 800ms. On UASpeech, it achieves a 4.55 MOS on 5-point scale and shows a relative improvement of 7.71% in WER compared to the SOTA.</p>
             </div>
             <div class="image-container">
                 <h2>Diagram of Model</h2>
@@ -82,148 +82,148 @@
                 <table>
                     <tr>
                         <th>Sample Name</th>
-                        <th>Description</th>
                         <th>Original</th>
                         <th>ASR-TTS</th>
                         <th>CRAFT w/ ctc</th>
                         <th>CRAFT w/ rnnt</th>
                         <th>CRAFT w/ Facodec</th>
+                        <th>Description</th>
                     </tr>
                     <tr>
                         <td>178_M_1</td>
-                        <td>Description of Sample 1</td>
                         <td>
                             <audio class="audio-controls" controls>
-                                <source src="1.wav" type="audio/mpeg">
+                                <source src="bussiness/178_M_19_54_ori.wav" type="audio/mpeg">
                                 Your browser does not support the audio element.
                             </audio>
                         </td>
                         <td>
                             <audio class="audio-controls" controls>
-                                <source src="1.wav" type="audio/mpeg">
+                                <source src="bussiness/178_M_19_54_nst.wav" type="audio/mpeg">
                                 Your browser does not support the audio element.
                             </audio>
                         </td>
                         <td>
                             <audio class="audio-controls" controls>
-                                <source src="1.wav" type="audio/mpeg">
+                                <source src="bussiness/178_M_19_54_ctc.wav" type="audio/mpeg">
                                 Your browser does not support the audio element.
                             </audio>
                         </td>
                         <td>
                             <audio class="audio-controls" controls>
-                                <source src="1.wav" type="audio/mpeg">
+                                <source src="bussiness/178_M_19_54_rnnt.wav" type="audio/mpeg">
                                 Your browser does not support the audio element.
                             </audio>
                         </td>
                         <td>
                             <audio class="audio-controls" controls>
-                                <source src="1.wav" type="audio/mpeg">
+                                <source src="bussiness/178_M_19_54_facodec.wav" type="audio/mpeg">
                                 Your browser does not support the audio element.
                             </audio>
                         </td>
+                        <td>你的缺点是什么</td>
                     </tr>
                     <tr>
                         <td>178_M_2</td>
-                        <td>Description of Sample 2</td>
                         <td>
                             <audio class="audio-controls" controls>
-                                <source src="1.wav" type="audio/mpeg">
+                                <source src="bussiness/178_M_19_92_ori.wav" type="audio/mpeg">
                                 Your browser does not support the audio element.
                             </audio>
                         </td>
                         <td>
                             <audio class="audio-controls" controls>
-                                <source src="1.wav" type="audio/mpeg">
+                                <source src="bussiness/178_M_19_92_nst.wav" type="audio/mpeg">
                                 Your browser does not support the audio element.
                             </audio>
                         </td>
                         <td>
                             <audio class="audio-controls" controls>
-                                <source src="1.wav" type="audio/mpeg">
+                                <source src="bussiness/178_M_19_92_ctc.wav" type="audio/mpeg">
                                 Your browser does not support the audio element.
                             </audio>
                         </td>
                         <td>
                             <audio class="audio-controls" controls>
-                                <source src="1.wav" type="audio/mpeg">
+                                <source src="bussiness/178_M_19_92_rnnt.wav" type="audio/mpeg">
                                 Your browser does not support the audio element.
                             </audio>
                         </td>
                         <td>
                             <audio class="audio-controls" controls>
-                                <source src="1.wav" type="audio/mpeg">
+                                <source src="bussiness/178_M_19_92_facodec.wav" type="audio/mpeg">
                                 Your browser does not support the audio element.
                             </audio>
                         </td>
+                        <td>我先吃饭了</td>
                     </tr>
                     <tr>
                         <td>106_W_1</td>
-                        <td>Description of Sample 2</td>
                         <td>
                             <audio class="audio-controls" controls>
-                                <source src="1.wav" type="audio/mpeg">
+                                <source src="bussiness/106_W_13_0_ori.wav" type="audio/mpeg">
                                 Your browser does not support the audio element.
                             </audio>
                         </td>
                         <td>
                             <audio class="audio-controls" controls>
-                                <source src="1.wav" type="audio/mpeg">
+                                <source src="bussiness/106_W_13_0_nst.wav" type="audio/mpeg">
                                 Your browser does not support the audio element.
                             </audio>
                         </td>
                         <td>
                             <audio class="audio-controls" controls>
-                                <source src="1.wav" type="audio/mpeg">
+                                <source src="bussiness/106_W_13_0_ctc.wav" type="audio/mpeg">
                                 Your browser does not support the audio element.
                             </audio>
                         </td>
                         <td>
                             <audio class="audio-controls" controls>
-                                <source src="1.wav" type="audio/mpeg">
+                                <source src="bussiness/106_W_13_0_rnnt.wav" type="audio/mpeg">
                                 Your browser does not support the audio element.
                             </audio>
                         </td>
                         <td>
                             <audio class="audio-controls" controls>
-                                <source src="1.wav" type="audio/mpeg">
+                                <source src="bussiness/106_W_13_0_facodec.wav" type="audio/mpeg">
                                 Your browser does not support the audio element.
                             </audio>
                         </td>
+                        <td>它花瓣就像我们的手</td>
                     </tr>
                     <tr>
                         <td>106_W_2</td>
-                        <td>Description of Sample 2</td>
                         <td>
                             <audio class="audio-controls" controls>
-                                <source src="1.wav" type="audio/mpeg">
+                                <source src="bussiness/106_W_13_1_ori.wav" type="audio/mpeg">
                                 Your browser does not support the audio element.
                             </audio>
                         </td>
                         <td>
                             <audio class="audio-controls" controls>
-                                <source src="1.wav" type="audio/mpeg">
+                                <source src="bussiness/106_W_13_1_nst.wav" type="audio/mpeg">
                                 Your browser does not support the audio element.
                             </audio>
                         </td>
                         <td>
                             <audio class="audio-controls" controls>
-                                <source src="1.wav" type="audio/mpeg">
+                                <source src="bussiness/106_W_13_1_ctc.wav" type="audio/mpeg">
                                 Your browser does not support the audio element.
                             </audio>
                         </td>
                         <td>
                             <audio class="audio-controls" controls>
-                                <source src="1.wav" type="audio/mpeg">
+                                <source src="bussiness/106_W_13_1_rnnt.wav" type="audio/mpeg">
                                 Your browser does not support the audio element.
                             </audio>
                         </td>
                         <td>
                             <audio class="audio-controls" controls>
-                                <source src="1.wav" type="audio/mpeg">
+                                <source src="bussiness/106_W_13_1_facodec.wav" type="audio/mpeg">
                                 Your browser does not support the audio element.
                             </audio>
                         </td>
+                        <td>揪掉这些不引人注目的小花</td>
                     </tr>
                     <!-- Add more rows as needed -->
                 </table>
@@ -231,148 +231,148 @@
                 <table>
                     <tr>
                         <th>Sample Name</th>
-                        <th>Description</th>
                         <th>Original</th>
                         <th>ASR-TTS</th>
                         <th>CRAFT w/ ctc</th>
                         <th>CRAFT w/ rnnt</th>
                         <th>CRAFT w/ Facodec</th>
+                        <th>Description</th>
                     </tr>
                     <tr>
                         <td>20_M_1</td>
-                        <td>Description of Sample 1</td>
                         <td>
                             <audio class="audio-controls" controls>
-                                <source src="1.wav" type="audio/mpeg">
+                                <source src="bussiness/20_M_28_0_ori.wav" type="audio/mpeg">
                                 Your browser does not support the audio element.
                             </audio>
                         </td>
                         <td>
                             <audio class="audio-controls" controls>
-                                <source src="1.wav" type="audio/mpeg">
+                                <source src="bussiness/20_M_28_0_nst.wav" type="audio/mpeg">
                                 Your browser does not support the audio element.
                             </audio>
                         </td>
                         <td>
                             <audio class="audio-controls" controls>
-                                <source src="1.wav" type="audio/mpeg">
+                                <source src="bussiness/20_M_28_0_ctc.wav" type="audio/mpeg">
                                 Your browser does not support the audio element.
                             </audio>
                         </td>
                         <td>
                             <audio class="audio-controls" controls>
-                                <source src="1.wav" type="audio/mpeg">
+                                <source src="bussiness/20_M_28_0_rnnt.wav" type="audio/mpeg">
                                 Your browser does not support the audio element.
                             </audio>
                         </td>
                         <td>
                             <audio class="audio-controls" controls>
-                                <source src="1.wav" type="audio/mpeg">
+                                <source src="bussiness/20_M_28_0_facodec.wav" type="audio/mpeg">
                                 Your browser does not support the audio element.
                             </audio>
                         </td>
+                        <td>生活很平淡又很难</td>
                     </tr>
                     <tr>
                         <td>20_M_2</td>
-                        <td>Description of Sample 2</td>
                         <td>
                             <audio class="audio-controls" controls>
-                                <source src="1.wav" type="audio/mpeg">
+                                <source src="bussiness/20_M_28_33_ori.wav" type="audio/mpeg">
                                 Your browser does not support the audio element.
                             </audio>
                         </td>
                         <td>
                             <audio class="audio-controls" controls>
-                                <source src="1.wav" type="audio/mpeg">
+                                <source src="bussiness/20_M_28_33_nst.wav" type="audio/mpeg">
                                 Your browser does not support the audio element.
                             </audio>
                         </td>
                         <td>
                             <audio class="audio-controls" controls>
-                                <source src="1.wav" type="audio/mpeg">
+                                <source src="bussiness/20_M_28_33_ctc.wav" type="audio/mpeg">
                                 Your browser does not support the audio element.
                             </audio>
                         </td>
                         <td>
                             <audio class="audio-controls" controls>
-                                <source src="1.wav" type="audio/mpeg">
+                                <source src="bussiness/20_M_28_33_rnnt.wav" type="audio/mpeg">
                                 Your browser does not support the audio element.
                             </audio>
                         </td>
                         <td>
                             <audio class="audio-controls" controls>
-                                <source src="1.wav" type="audio/mpeg">
+                                <source src="bussiness/20_M_28_33_facodec.wav" type="audio/mpeg">
                                 Your browser does not support the audio element.
                             </audio>
                         </td>
+                        <td>一个人主动久了肯定会累了</td>
                     </tr>
                     <tr>
                         <td>39_W_1</td>
-                        <td>Description of Sample 2</td>
                         <td>
                             <audio class="audio-controls" controls>
-                                <source src="1.wav" type="audio/mpeg">
+                                <source src="bussiness/39_W_37_17_ori.wav" type="audio/mpeg">
                                 Your browser does not support the audio element.
                             </audio>
                         </td>
                         <td>
                             <audio class="audio-controls" controls>
-                                <source src="1.wav" type="audio/mpeg">
+                                <source src="bussiness/39_W_37_17_nst.wav" type="audio/mpeg">
                                 Your browser does not support the audio element.
                             </audio>
                         </td>
                         <td>
                             <audio class="audio-controls" controls>
-                                <source src="1.wav" type="audio/mpeg">
+                                <source src="bussiness/39_W_37_17_ctc.wav" type="audio/mpeg">
                                 Your browser does not support the audio element.
                             </audio>
                         </td>
                         <td>
                             <audio class="audio-controls" controls>
-                                <source src="1.wav" type="audio/mpeg">
+                                <source src="bussiness/39_W_37_17_rnnt.wav" type="audio/mpeg">
                                 Your browser does not support the audio element.
                             </audio>
                         </td>
                         <td>
                             <audio class="audio-controls" controls>
-                                <source src="1.wav" type="audio/mpeg">
+                                <source src="bussiness/39_W_37_17_facodec.wav" type="audio/mpeg">
                                 Your browser does not support the audio element.
                             </audio>
                         </td>
+                        <td>现在不是双十一啊</td>
                     </tr>
                     <tr>
                         <td>39_W_2</td>
-                        <td>Description of Sample 2</td>
                         <td>
                             <audio class="audio-controls" controls>
-                                <source src="1.wav" type="audio/mpeg">
+                                <source src="bussiness/39_W_37_64_ori.wav" type="audio/mpeg">
                                 Your browser does not support the audio element.
                             </audio>
                         </td>
                         <td>
                             <audio class="audio-controls" controls>
-                                <source src="1.wav" type="audio/mpeg">
+                                <source src="bussiness/39_W_37_64_nst.wav" type="audio/mpeg">
                                 Your browser does not support the audio element.
                             </audio>
                         </td>
                         <td>
                             <audio class="audio-controls" controls>
-                                <source src="1.wav" type="audio/mpeg">
+                                <source src="bussiness/39_W_37_64_ctc.wav" type="audio/mpeg">
                                 Your browser does not support the audio element.
                             </audio>
                         </td>
                         <td>
                             <audio class="audio-controls" controls>
-                                <source src="1.wav" type="audio/mpeg">
+                                <source src="bussiness/39_W_37_64_rnnt.wav" type="audio/mpeg">
                                 Your browser does not support the audio element.
                             </audio>
                         </td>
                         <td>
                             <audio class="audio-controls" controls>
-                                <source src="1.wav" type="audio/mpeg">
+                                <source src="bussiness/39_W_37_64_facodec.wav" type="audio/mpeg">
                                 Your browser does not support the audio element.
                             </audio>
                         </td>
+                        <td>看来真的是收不到姐姐的祝福了</td>
                     </tr>
                     <!-- Add more rows as needed -->
                 </table>
@@ -384,52 +384,73 @@
                 <table>
                     <tr>
                         <th>Sample Name</th>
-                        <th>Description</th>
                         <th>Original</th>
-                        <th>ASR-TTS</th>
-                        <th>CRAFT w/ ctc</th>
-                        <th>CRAFT w/ rnnt</th>
                         <th>CRAFT w/ Facodec</th>
+                        <th>Description</th>
                     </tr>
                     <tr>
                         <td>M05_1</td>
-                        <td>Description of Sample 1</td>
                         <td>
                             <audio class="audio-controls" controls>
-                                <source src="1.wav" type="audio/mpeg">
+                                <source src="uaspeech/M05_B1_C9_M7.wav" type="audio/mpeg">
                                 Your browser does not support the audio element.
                             </audio>
                         </td>
+                        <td>
+                            <audio class="audio-controls" controls>
+                                <source src="uaspeech/M05_B1_C9_M7_repair.wav" type="audio/mpeg">
+                                Your browser does not support the audio element.
+                            </audio>
+                        </td>
+                        <td>shift</td>
                     </tr>
                     <tr>
                         <td>M05_2</td>
-                        <td>Description of Sample 2</td>
                         <td>
                             <audio class="audio-controls" controls>
-                                <source src="1.wav" type="audio/mpeg">
+                                <source src="uaspeech/M05_B3_UW5_M8.wav" type="audio/mpeg">
                                 Your browser does not support the audio element.
                             </audio>
                         </td>
+                        <td>
+                            <audio class="audio-controls" controls>
+                                <source src="uaspeech/M05_B3_UW5_M8_repair.wav" type="audio/mpeg">
+                                Your browser does not support the audio element.
+                            </audio>
+                        </td>
+                        <td>good</td>
                     </tr>
                     <tr>
-                        <td>F04_1</td>
-                        <td>Description of Sample 2</td>
+                        <td>F04_1</td>              
                         <td>
                             <audio class="audio-controls" controls>
-                                <source src="1.wav" type="audio/mpeg">
+                                <source src="uaspeech/F04_B2_CW100_M3.wav" type="audio/mpeg">
                                 Your browser does not support the audio element.
                             </audio>
                         </td>
+                        <td>
+                            <audio class="audio-controls" controls>
+                                <source src="uaspeech/F04_B2_CW100_M3_repair.wav" type="audio/mpeg">
+                                Your browser does not support the audio element.
+                            </audio>
+                        </td>
+                        <td>yes</td>
                     </tr>
                     <tr>
                         <td>F04_2</td>
-                        <td>Description of Sample 2</td>
                         <td>
                             <audio class="audio-controls" controls>
-                                <source src="1.wav" type="audio/mpeg">
+                                <source src="uaspeech/F04_B3_UW97_M5.wav" type="audio/mpeg">
                                 Your browser does not support the audio element.
                             </audio>
                         </td>
+                        <td>
+                            <audio class="audio-controls" controls>
+                                <source src="uaspeech/F04_B3_UW97_M5_repair.wav" type="audio/mpeg">
+                                Your browser does not support the audio element.
+                            </audio>
+                        </td>
+                        <td>yes</td>
                     </tr>
                     <!-- Add more rows as needed -->
                 </table>
@@ -437,49 +458,73 @@
                 <table>
                     <tr>
                         <th>Sample Name</th>
-                        <th>Description</th>
                         <th>Original</th>
                         <th>CRAFT w/ Facodec</th>
+                        <th>Description</th>
                     </tr>
                     <tr>
                         <td>M07_1</td>
-                        <td>Description of Sample 1</td>
                         <td>
                             <audio class="audio-controls" controls>
-                                <source src="1.wav" type="audio/mpeg">
+                                <source src="uaspeech/M07_B1_CW23_M5.wav" type="audio/mpeg">
                                 Your browser does not support the audio element.
                             </audio>
                         </td>
+                        <td>
+                            <audio class="audio-controls" controls>
+                                <source src="uaspeech/M07_B1_CW23_M5_repair.wav" type="audio/mpeg">
+                                Your browser does not support the audio element.
+                            </audio>
+                        </td>
+                        <td>this</td>
                     </tr>
                     <tr>
                         <td>M07_2</td>
-                        <td>Description of Sample 2</td>
                         <td>
                             <audio class="audio-controls" controls>
-                                <source src="1.wav" type="audio/mpeg">
+                                <source src="uaspeech/M05_B3_UW85_M4.wav" type="audio/mpeg">
                                 Your browser does not support the audio element.
                             </audio>
                         </td>
+                        <td>
+                            <audio class="audio-controls" controls>
+                                <source src="uaspeech/M05_B3_UW85_M4_repair.wav" type="audio/mpeg">
+                                Your browser does not support the audio element.
+                            </audio>
+                        </td>
+                        <td>flowers</td>
                     </tr>
                     <tr>
                         <td>F02_1</td>
-                        <td>Description of Sample 2</td>
                         <td>
                             <audio class="audio-controls" controls>
-                                <source src="1.wav" type="audio/mpeg">
+                                <source src="uaspeech/F02_B1_D0_M5.wav" type="audio/mpeg">
                                 Your browser does not support the audio element.
                             </audio>
                         </td>
+                        <td>
+                            <audio class="audio-controls" controls>
+                                <source src="uaspeech/F02_B1_D0_M5_repair.wav" type="audio/mpeg">
+                                Your browser does not support the audio element.
+                            </audio>
+                        </td>
+                        <td>zero</td>
                     </tr>
                     <tr>
                         <td>F02_2</td>
-                        <td>Description of Sample 2</td>
                         <td>
                             <audio class="audio-controls" controls>
-                                <source src="1.wav" type="audio/mpeg">
+                                <source src="uaspeech/F02_B1_CW88_M2.wav" type="audio/mpeg">
                                 Your browser does not support the audio element.
                             </audio>
                         </td>
+                        <td>
+                            <audio class="audio-controls" controls>
+                                <source src="uaspeech/F02_B1_CW88_M2_repair.wav" type="audio/mpeg">
+                                Your browser does not support the audio element.
+                            </audio>
+                        </td>
+                        <td>now</td>
                     </tr>
                     <!-- Add more rows as needed -->
                 </table>
