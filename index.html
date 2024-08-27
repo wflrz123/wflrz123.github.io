@@ -69,11 +69,11 @@
         </header>
         <main>
             <div class="text-container">
-                <h2>Abstract</h2>
+                <h1>Abstract</h1>
                 <p style="font-size: 20px;">Dysarthria patients exhibit various abnormal prosody patterns in their speech, which hinders their ability to communicate effectively. Existing research frequently focuses on reconstructing dysarthric speech by correcting the content attributes. However, these methods frequently fall short in terms of quality and efficiency. Considering the stringent demands for immediacy, naturalness, and intelligibility in daily communication. We propose a streaming dysarthric speech reconstruction system based on attribute factorization and progressive correction of each attribute. We design a factorized GPT model based FACodec to generate attributes in each subspace, leveraging corrected attributes as implicit biases to progressively correct content, prosody, and acoustic details in sequence. We also integrate wait-k and chunk inference strategies to enable streaming reconstruction. Our framework significantly enhances the naturalness and intelligibility of reconstructed speech with a latency of only 800ms. On UASpeech, it achieves a 4.55 MOS on 5-point scale and shows a relative improvement of 7.71% in WER compared to the SOTA.</p>
             </div>
             <div class="image-container">
-                <h2>Diagram of Model</h2>
+                <h1>Diagram of Model</h1>
                 <img src="model.png" alt="Model Diagram">
             </div>
             <div class="container">
@@ -81,13 +81,13 @@
                 <h2>intelligibility-low</h2>
                 <table>
                     <tr>
-                        <th>Sample Name</th>
+                        <th>Sample</th>
                         <th>Original</th>
                         <th>ASR-TTS</th>
                         <th>CRAFT w/ ctc</th>
                         <th>CRAFT w/ rnnt</th>
                         <th>CRAFT w/ Facodec</th>
-                        <th>Description</th>
+                        <th>Text</th>
                     </tr>
                     <tr>
                         <td>178_M_1</td>
@@ -121,7 +121,7 @@
                                 Your browser does not support the audio element.
                             </audio>
                         </td>
-                        <td>你的缺点是什么</td>
+                        <td style="text-align: center;">你的缺点是什么</td>
                     </tr>
                     <tr>
                         <td>178_M_2</td>
@@ -155,7 +155,7 @@
                                 Your browser does not support the audio element.
                             </audio>
                         </td>
-                        <td>我先吃饭了</td>
+                        <td style="text-align: center;">我先吃饭了</td>
                     </tr>
                     <tr>
                         <td>106_W_1</td>
@@ -189,7 +189,7 @@
                                 Your browser does not support the audio element.
                             </audio>
                         </td>
-                        <td>它花瓣就像我们的手</td>
+                        <td style="text-align: center;">它花瓣就像我们的手</td>
                     </tr>
                     <tr>
                         <td>106_W_2</td>
@@ -223,20 +223,20 @@
                                 Your browser does not support the audio element.
                             </audio>
                         </td>
-                        <td>揪掉这些不引人注目的小花</td>
+                        <td style="text-align: center;">揪掉这些不引人注目的小花</td>
                     </tr>
                     <!-- Add more rows as needed -->
                 </table>
                 <h2>intelligibility-middle</h2>
                 <table>
                     <tr>
-                        <th>Sample Name</th>
+                        <th>Sample</th>
                         <th>Original</th>
                         <th>ASR-TTS</th>
                         <th>CRAFT w/ ctc</th>
                         <th>CRAFT w/ rnnt</th>
                         <th>CRAFT w/ Facodec</th>
-                        <th>Description</th>
+                        <th>Text</th>
                     </tr>
                     <tr>
                         <td>20_M_1</td>
@@ -270,7 +270,7 @@
                                 Your browser does not support the audio element.
                             </audio>
                         </td>
-                        <td>生活很平淡又很难</td>
+                        <td style="text-align: center;">生活很平淡又很难</td>
                     </tr>
                     <tr>
                         <td>20_M_2</td>
@@ -304,7 +304,7 @@
                                 Your browser does not support the audio element.
                             </audio>
                         </td>
-                        <td>一个人主动久了肯定会累了</td>
+                        <td style="text-align: center;">一个人主动久了肯定会累了</td>
                     </tr>
                     <tr>
                         <td>39_W_1</td>
@@ -338,7 +338,7 @@
                                 Your browser does not support the audio element.
                             </audio>
                         </td>
-                        <td>现在不是双十一啊</td>
+                        <td style="text-align: center;">现在不是双十一啊</td>
                     </tr>
                     <tr>
                         <td>39_W_2</td>
@@ -372,7 +372,7 @@
                                 Your browser does not support the audio element.
                             </audio>
                         </td>
-                        <td>看来真的是收不到姐姐的祝福了</td>
+                        <td style="text-align: center;">看来真的是收不到姐姐的祝福了</td>
                     </tr>
                     <!-- Add more rows as needed -->
                 </table>
@@ -383,10 +383,10 @@
                 <h2>intelligibility-low</h2>
                 <table>
                     <tr>
-                        <th>Sample Name</th>
+                        <th>Sample</th>
                         <th>Original</th>
                         <th>CRAFT w/ Facodec</th>
-                        <th>Description</th>
+                        <th>Text</th>
                     </tr>
                     <tr>
                         <td>M05_1</td>
@@ -402,7 +402,7 @@
                                 Your browser does not support the audio element.
                             </audio>
                         </td>
-                        <td>shift</td>
+                        <td style="text-align: center;">shift</td>
                     </tr>
                     <tr>
                         <td>M05_2</td>
@@ -418,7 +418,7 @@
                                 Your browser does not support the audio element.
                             </audio>
                         </td>
-                        <td>good</td>
+                        <td style="text-align: center;">good</td>
                     </tr>
                     <tr>
                         <td>F04_1</td>              
@@ -434,7 +434,7 @@
                                 Your browser does not support the audio element.
                             </audio>
                         </td>
-                        <td>yes</td>
+                        <td style="text-align: center;">yes</td>
                     </tr>
                     <tr>
                         <td>F04_2</td>
@@ -450,17 +450,17 @@
                                 Your browser does not support the audio element.
                             </audio>
                         </td>
-                        <td>yes</td>
+                        <td style="text-align: center;">watch</td>
                     </tr>
                     <!-- Add more rows as needed -->
                 </table>
                 <h2>intelligibility-middle</h2>
                 <table>
                     <tr>
-                        <th>Sample Name</th>
+                        <th>Sample</th>
                         <th>Original</th>
                         <th>CRAFT w/ Facodec</th>
-                        <th>Description</th>
+                        <th>Text</th>
                     </tr>
                     <tr>
                         <td>M07_1</td>
@@ -476,7 +476,7 @@
                                 Your browser does not support the audio element.
                             </audio>
                         </td>
-                        <td>this</td>
+                        <td style="text-align: center;">this</td>
                     </tr>
                     <tr>
                         <td>M07_2</td>
@@ -492,7 +492,7 @@
                                 Your browser does not support the audio element.
                             </audio>
                         </td>
-                        <td>flowers</td>
+                        <td style="text-align: center;">flowers</td>
                     </tr>
                     <tr>
                         <td>F02_1</td>
@@ -508,7 +508,7 @@
                                 Your browser does not support the audio element.
                             </audio>
                         </td>
-                        <td>zero</td>
+                        <td style="text-align: center;">zero</td>
                     </tr>
                     <tr>
                         <td>F02_2</td>
@@ -524,7 +524,7 @@
                                 Your browser does not support the audio element.
                             </audio>
                         </td>
-                        <td>now</td>
+                        <td style="text-align: center;">now</td>
                     </tr>
                     <!-- Add more rows as needed -->
                 </table>
