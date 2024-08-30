@@ -70,10 +70,10 @@
         <main>
             <div class="text-container">
                 <h1>Abstract</h1>
-                <p style="font-size: 20px;">Dysarthria patients exhibit various abnormal prosody patterns in their speech, which hinders their ability to communicate effectively. Existing research frequently focuses on reconstructing dysarthric speech by correcting the content attributes. However, these methods frequently fall short in terms of quality and efficiency. Considering the stringent demands for immediacy, naturalness, and intelligibility in daily communication. We propose a streaming dysarthric speech reconstruction system based on attribute factorization and progressive correction of each attribute. We design a factorized GPT model based FACodec to generate attributes in each subspace, leveraging corrected attributes as implicit biases to progressively correct content, prosody, and acoustic details in sequence. We also integrate wait-k and chunk inference strategies to enable streaming reconstruction. Our framework significantly enhances the naturalness and intelligibility of reconstructed speech with a latency of only 800ms. On UASpeech, it achieves a 4.55 MOS on 5-point scale and shows a relative improvement of 7.71% in WER compared to the SOTA.</p>
+                <p style="font-size: 20px;">Dysarthria patients exhibit various abnormal prosody patterns in their speech, which hinders their ability to communicate effectively. Existing research frequently focus on reconstructing dysarthric speech by correcting the content attributes. However, these methods frequently fall short in terms of quality and efficiency. Considering the stringent demands for immediacy, naturalness, and intelligibility in daily communication. We propose a streaming dysarthric speech reconstruction system based on attribute factorization and progressive correction of each attribute. Factorized GPT model based FACodec is designed to generate attributes in each subspace, leveraging corrected attributes as implicit biases to progressively correct content, prosody, and acoustic details in sequence. We also integrate wait-k and chunk inference strategies to enable streaming reconstruction. Our framework significantly enhances the naturalness and intelligibility of reconstructed speech with a latency of only 800ms. On UASpeech, it achieves 4.55 MOS on 5-point scale and shows relative improvement of 7.71% in WER compared to the SOTA.</p>
             </div>
-            <div class="image-container">
-                <h1>Diagram of Model</h1>
+            <h1>Diagram of Model</h1>
+            <div class="image-container",style="text-align: center;">
                 <img src="model.png" alt="Model Diagram">
             </div>
             <div class="container">
@@ -84,9 +84,9 @@
                         <th>Sample</th>
                         <th>Original</th>
                         <th>ASR-TTS</th>
-                        <th>CRAFT w/ ctc</th>
-                        <th>CRAFT w/ rnnt</th>
-                        <th>CRAFT w/ Facodec</th>
+                        <th>VQGPT-DSR w/ ctc</th>
+                        <th>VQGPT-DSR</th>
+                        <th>FAGPT-DSR</th>
                         <th>Text</th>
                     </tr>
                     <tr>
@@ -233,9 +233,9 @@
                         <th>Sample</th>
                         <th>Original</th>
                         <th>ASR-TTS</th>
-                        <th>CRAFT w/ ctc</th>
-                        <th>CRAFT w/ rnnt</th>
-                        <th>CRAFT w/ Facodec</th>
+                        <th>VQGPT-DSR w/ ctc</th>
+                        <th>VQGPT-DSR</th>
+                        <th>FAGPT-DSR</th>
                         <th>Text</th>
                     </tr>
                     <tr>
@@ -385,7 +385,7 @@
                     <tr>
                         <th>Sample</th>
                         <th>Original</th>
-                        <th>CRAFT w/ Facodec</th>
+                        <th>FAGPT-DSR</th>
                         <th>Text</th>
                     </tr>
                     <tr>
