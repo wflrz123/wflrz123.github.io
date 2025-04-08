@@ -65,16 +65,16 @@
 <body>
     <div class="container">
         <header>
-            <h1>FAGPT-SDSR: Streaming Dysarthric Speech Reconstruction System With Factorized GPT Model</h1>
+            <h1>End-to-End Simultaneous Dysarthric Speech Reconstruction with Frame-Level Adaptor and Multiple Wait-k Knowledge Distillation</h1>
         </header>
         <main>
             <div class="text-container">
                 <h1>Abstract</h1>
-                <p style="font-size: 20px;">Dysarthria patients exhibit various abnormal prosody patterns in their speech, which hinders their ability to communicate effectively. Existing research frequently focus on reconstructing dysarthric speech by correcting the content attributes. However, these methods frequently fall short in terms of quality and efficiency. Considering the stringent demands for immediacy, naturalness, and intelligibility in daily communication. We propose a streaming dysarthric speech reconstruction system based on attribute factorization and progressive correction of each attribute. Factorized GPT model based FACodec is designed to generate attributes in each subspace, leveraging corrected attributes as implicit biases to progressively correct content, prosody, and acoustic details in sequence. We also integrate wait-k and chunk inference strategies to enable streaming reconstruction. Our framework significantly enhances the naturalness and intelligibility of reconstructed speech with a latency of only 800ms. On UASpeech, it achieves 4.55 MOS on 5-point scale and shows relative improvement of 7.71% in WER compared to the SOTA.</p>
+                <p style="font-size: 20px;">DSR typically employs a cascaded system that combines ASR and sentence-level TTS to convert dysarthric speech into normal one. Dysarthric patients speak slowly, leading to an excessively long response time in such systems. Cascaded DSR systems based on streaming ASR and incremental TTS can reduce these delays. However, patients with varying degrees of dysarthria exhibit significant pronunciation differences for the same text, resulting in poor robustness and limiting the intelligibility. In addition, incremental TTS suffers from poor prosodic feature prediction due to a limited receptive field. We propose an end-to-end simultaneous DSR system with two key innovations: 1) A frame-level adaptor is introduced to bridge ASR and TTS for improving the error tolerance. 2) A multiple wait-k autoregressive TTS is designed to mitigate prosodic degradation via multi-view knowledge distillation. On UASpeech, it achieves 4.67 MOS, showing a 23.51% relative improvement in WER compared to the SOTA.</p>
             </div>
             <h1>Diagram of Model</h1>
             <div class="image-container" style="text-align: center;">
-                <img src="model_2.png" alt="Model Diagram">
+                <img src="model_new.png" alt="Model Diagram">
             </div>
             <div class="container">
                 <h1>Chinese commercial Test Set</h1>
@@ -84,10 +84,11 @@
                         <th>Sample</th>
                         <th>Original</th>
                         <th>ASR-TTS</th>
-                        <th>VQGPT-SDSR w/ ctc</th>
-                        <th>VQGPT-SDSR</th>
-                        <th>FAGPT-SDSR</th>
-                        <th>Text</th>
+                        <th>Conformer RNN-T</th>
+                        <th>E2E-SDSR wait 1</th>
+                        <th>E2E-SDSR wait 10</th>
+                        <th>E2E-SDSR wait 20</th>
+                        <th>Label</th>
                     </tr>
                     <tr>
                         <td>178_M_1</td>
@@ -103,6 +104,7 @@
                                 Your browser does not support the audio element.
                             </audio>
                         </td>
+                        <td style="text-align: center;">n i d e q <span style="color: #ff0000;">u</span> d ian sh i sh en m e</td>
                         <td>
                             <audio class="audio-controls" controls>
                                 <source src="bussiness/178_M_19_54_ctc.wav" type="audio/mpeg">
@@ -137,6 +139,7 @@
                                 Your browser does not support the audio element.
                             </audio>
                         </td>
+                        <td style="text-align: center;">w o j <span style="color: #ff0000;">ian</span> ch i f an l e</td>
                         <td>
                             <audio class="audio-controls" controls>
                                 <source src="bussiness/178_M_19_92_ctc.wav" type="audio/mpeg">
@@ -171,6 +174,7 @@
                                 Your browser does not support the audio element.
                             </audio>
                         </td>
+                        <td style="text-align: center;">t a h ua b an j iu x iang w o m en d e <span style="color: #ff0000;">t</span> ou</td>
                         <td>
                             <audio class="audio-controls" controls>
                                 <source src="bussiness/106_W_13_0_ctc.wav" type="audio/mpeg">
@@ -205,6 +209,7 @@
                                 Your browser does not support the audio element.
                             </audio>
                         </td>
+                        <td style="text-align: center;">j iu d iao zh e <span style="color: #ff0000;">j</span> ie b u y in r en <span style="color: #ff0000;">d</span> u m u d e x iao h ua</td>
                         <td>
                             <audio class="audio-controls" controls>
                                 <source src="bussiness/106_W_13_1_ctc.wav" type="audio/mpeg">
@@ -233,10 +238,11 @@
                         <th>Sample</th>
                         <th>Original</th>
                         <th>ASR-TTS</th>
-                        <th>VQGPT-SDSR w/ ctc</th>
-                        <th>VQGPT-SDSR</th>
-                        <th>FAGPT-SDSR</th>
-                        <th>Text</th>
+                        <th>Conformer RNN-T</th>
+                        <th>E2E-SDSR wait 1</th>
+                        <th>E2E-SDSR wait 10</th>
+                        <th>E2E-SDSR wait 20</th>
+                        <th>Label</th>
                     </tr>
                     <tr>
                         <td>20_M_1</td>
@@ -252,9 +258,10 @@
                                 Your browser does not support the audio element.
                             </audio>
                         </td>
+                        <td style="text-align: center;">sh eng h uo h en p in d <span style="color: #ff0000;">a</span> y ou h en n an</td>
                         <td>
                             <audio class="audio-controls" controls>
-                                <source src="bussiness/20_M_28_0_ctc.wav" type="audio/mpeg">
+                                <source src="bussiness/178_M_19_92_ctc.wav" type="audio/mpeg">
                                 Your browser does not support the audio element.
                             </audio>
                         </td>
@@ -286,6 +293,7 @@
                                 Your browser does not support the audio element.
                             </audio>
                         </td>
+                        <td style="text-align: center;">y i g e r en zh u d ong j iu l e k en d ing h ui <span style="color: #ff0000;">n</span> ei l e</td>
                         <td>
                             <audio class="audio-controls" controls>
                                 <source src="bussiness/20_M_28_33_ctc.wav" type="audio/mpeg">
@@ -320,6 +328,7 @@
                                 Your browser does not support the audio element.
                             </audio>
                         </td>
+                        <td style="text-align: center;"><span style="color: #ff0000;">j</span> ian z ai b u sh i sh uang sh i y i a</td>
                         <td>
                             <audio class="audio-controls" controls>
                                 <source src="bussiness/39_W_37_17_ctc.wav" type="audio/mpeg">
@@ -354,6 +363,7 @@
                                 Your browser does not support the audio element.
                             </audio>
                         </td>
+                        <td style="text-align: center;">k an l ai zh en d e sh i sh ou b u d ao j ie j ie d e zh u f u l e</td>
                         <td>
                             <audio class="audio-controls" controls>
                                 <source src="bussiness/39_W_37_64_ctc.wav" type="audio/mpeg">
@@ -380,151 +390,311 @@
 
             <div class="container">
                 <h1>UASpeech Test Set</h1>
-                <h2>intelligibility-low</h2>
-                <table>
-                    <tr>
-                        <th>Sample</th>
-                        <th>Original</th>
-                        <th>FAGPT-SDSR</th>
-                        <th>Text</th>
-                    </tr>
-                    <tr>
-                        <td>M05_1</td>
-                        <td>
-                            <audio class="audio-controls" controls>
-                                <source src="uaspeech/M05_B1_C9_M7.wav" type="audio/mpeg">
-                                Your browser does not support the audio element.
-                            </audio>
-                        </td>
-                        <td>
-                            <audio class="audio-controls" controls>
-                                <source src="uaspeech/M05_B1_C9_M7_repair.wav" type="audio/mpeg">
-                                Your browser does not support the audio element.
-                            </audio>
-                        </td>
-                        <td style="text-align: center;">shift</td>
-                    </tr>
-                    <tr>
-                        <td>M05_2</td>
-                        <td>
-                            <audio class="audio-controls" controls>
-                                <source src="uaspeech/M05_B3_UW5_M8.wav" type="audio/mpeg">
-                                Your browser does not support the audio element.
-                            </audio>
-                        </td>
-                        <td>
-                            <audio class="audio-controls" controls>
-                                <source src="uaspeech/M05_B3_UW5_M8_repair.wav" type="audio/mpeg">
-                                Your browser does not support the audio element.
-                            </audio>
-                        </td>
-                        <td style="text-align: center;">good</td>
-                    </tr>
-                    <tr>
-                        <td>F04_1</td>              
-                        <td>
-                            <audio class="audio-controls" controls>
-                                <source src="uaspeech/F04_B2_CW100_M3.wav" type="audio/mpeg">
-                                Your browser does not support the audio element.
-                            </audio>
-                        </td>
-                        <td>
-                            <audio class="audio-controls" controls>
-                                <source src="uaspeech/F04_B2_CW100_M3_repair.wav" type="audio/mpeg">
-                                Your browser does not support the audio element.
-                            </audio>
-                        </td>
-                        <td style="text-align: center;">yes</td>
-                    </tr>
-                    <tr>
-                        <td>F04_2</td>
-                        <td>
-                            <audio class="audio-controls" controls>
-                                <source src="uaspeech/F04_B3_UW97_M5.wav" type="audio/mpeg">
-                                Your browser does not support the audio element.
-                            </audio>
-                        </td>
-                        <td>
-                            <audio class="audio-controls" controls>
-                                <source src="uaspeech/F04_B3_UW97_M5_repair.wav" type="audio/mpeg">
-                                Your browser does not support the audio element.
-                            </audio>
-                        </td>
-                        <td style="text-align: center;">watch</td>
-                    </tr>
-                    <!-- Add more rows as needed -->
-                </table>
                 <h2>intelligibility-middle</h2>
                 <table>
                     <tr>
                         <th>Sample</th>
                         <th>Original</th>
-                        <th>FAGPT-SDSR</th>
-                        <th>Text</th>
+                        <th>E2E-DSR</th>
+                        <th>ASA-DSR</th>
+                        <th>Unit-DSR</th>
+                        <th>Conformer RNN-T</th>
+                        <th>E2E-SDSR wait 10</th>
+                        <th>Label</th>
+                    </tr>
+                    <tr>
+                        <td>M05_1</td>
+                        <td>
+                            <audio class="audio-controls" controls>
+                                <source src="uaspeech/original_advantageous.wav" type="audio/mpeg">
+                                Your browser does not support the audio element.
+                            </audio>
+                        </td>
+                        <td>
+                            <audio class="audio-controls" controls>
+                                <source src="uaspeech/ee_advantageous.wav" type="audio/mpeg">
+                                Your browser does not support the audio element.
+                            </audio>
+                        </td>
+                        <td>
+                            <audio class="audio-controls" controls>
+                                <source src="uaspeech/asa_advantageous.wav" type="audio/mpeg">
+                                Your browser does not support the audio element.
+                            </audio>
+                        </td>
+                        <td>
+                            <audio class="audio-controls" controls>
+                                <source src="uaspeech/unit_advantageous.wav" type="audio/mpeg">
+                                Your browser does not support the audio element.
+                            </audio>
+                        </td>
+                        <td style="text-align: center;">En_ae d En_v En_ax n t En_ey j En_ax s</td>
+                        <td>
+                            <audio class="audio-controls" controls>
+                                <source src="uaspeech/advantageous_e2esdsr.wav" type="audio/mpeg">
+                                Your browser does not support the audio element.
+                            </audio>
+                        </td>
+                        <td style="text-align: center;">advantageous</td>
+                    </tr>
+                    <tr>
+                        <td>M05_2</td>
+                        <td>
+                            <audio class="audio-controls" controls>
+                                <source src="uaspeech/original_downward.wav" type="audio/mpeg">
+                                Your browser does not support the audio element.
+                            </audio>
+                        </td>
+                        <td>
+                            <audio class="audio-controls" controls>
+                                <source src="uaspeech/ee_downward.wav" type="audio/mpeg">
+                                Your browser does not support the audio element.
+                            </audio>
+                        </td>
+                        <td>
+                            <audio class="audio-controls" controls>
+                                <source src="uaspeech/asa_downward.wav" type="audio/mpeg">
+                                Your browser does not support the audio element.
+                            </audio>
+                        </td>
+                        <td>
+                            <audio class="audio-controls" controls>
+                                <source src="uaspeech/unit_downward.wav" type="audio/mpeg">
+                                Your browser does not support the audio element.
+                            </audio>
+                        </td>
+                        <td style="text-align: center;">d En_aw n En_w En_er d</td>
+                        <td>
+                            <audio class="audio-controls" controls>
+                                <source src="uaspeech/downward_e2esdsr.wav" type="audio/mpeg">
+                                Your browser does not support the audio element.
+                            </audio>
+                        </td>
+                        <td style="text-align: center;">downward</td>
+                    </tr>
+                    <tr>
+                        <td>F04_1</td>
+                        <td>
+                            <audio class="audio-controls" controls>
+                                <source src="uaspeech/original_command.wav" type="audio/mpeg">
+                                Your browser does not support the audio element.
+                            </audio>
+                        </td>
+                        <td>
+                            <audio class="audio-controls" controls>
+                                <source src="uaspeech/ee_command.wav" type="audio/mpeg">
+                                Your browser does not support the audio element.
+                            </audio>
+                        </td>
+                        <td>
+                            <audio class="audio-controls" controls>
+                                <source src="uaspeech/asa_command.wav" type="audio/mpeg">
+                                Your browser does not support the audio element.
+                            </audio>
+                        </td>
+                        <td>
+                            <audio class="audio-controls" controls>
+                                <source src="uaspeech/unit_command.wav" type="audio/mpeg">
+                                Your browser does not support the audio element.
+                            </audio>
+                        </td>
+                        <td style="text-align: center;">k En_ax m En_ae n d</td>
+                        <td>
+                            <audio class="audio-controls" controls>
+                                <source src="uaspeech/command_e2esdsr.wav" type="audio/mpeg">
+                                Your browser does not support the audio element.
+                            </audio>
+                        </td>
+                        <td style="text-align: center;">command</td>
+                    </tr>
+                    <tr>
+                        <td>F04_2</td>
+                        <td>
+                            <audio class="audio-controls" controls>
+                                <source src="uaspeech/original_backspace.wav" type="audio/mpeg">
+                                Your browser does not support the audio element.
+                            </audio>
+                        </td>
+                        <td>
+                            <audio class="audio-controls" controls>
+                                <source src="uaspeech/ee_backspace.wav" type="audio/mpeg">
+                                Your browser does not support the audio element.
+                            </audio>
+                        </td>
+                        <td>
+                            <audio class="audio-controls" controls>
+                                <source src="uaspeech/asa_backspace.wav" type="audio/mpeg">
+                                Your browser does not support the audio element.
+                            </audio>
+                        </td>
+                        <td>
+                            <audio class="audio-controls" controls>
+                                <source src="uaspeech/unit_backspace.wav" type="audio/mpeg">
+                                Your browser does not support the audio element.
+                            </audio>
+                        </td>
+                        <td style="text-align: center;">b En_ae k <span style="color: #ff0000;">a</span> p En_ey s</td>
+                        <td>
+                            <audio class="audio-controls" controls>
+                                <source src="uaspeech/backspace_e2esdsr.wav" type="audio/mpeg">
+                                Your browser does not support the audio element.
+                            </audio>
+                        </td>
+                        <td style="text-align: center;">backspace</td>
+                    </tr>
+                    <!-- Add more rows as needed -->
+                </table>
+                <h2>intelligibility-low</h2>
+                <table>
+                    <tr>
+                        <th>Sample</th>
+                        <th>Original</th>
+                        <th>E2E-DSR</th>
+                        <th>ASA-DSR</th>
+                        <th>Unit-DSR</th>
+                        <th>Conformer RNN-T</th>
+                        <th>E2E-SDSR wait 10</th>
+                        <th>Label</th>
                     </tr>
                     <tr>
                         <td>M07_1</td>
                         <td>
                             <audio class="audio-controls" controls>
-                                <source src="uaspeech/M07_B1_CW23_M5.wav" type="audio/mpeg">
+                                <source src="uaspeech/original_paragraph.wav" type="audio/mpeg">
                                 Your browser does not support the audio element.
                             </audio>
                         </td>
                         <td>
                             <audio class="audio-controls" controls>
-                                <source src="uaspeech/M07_B1_CW23_M5_repair.wav" type="audio/mpeg">
+                                <source src="uaspeech/ee_paragraph.wav" type="audio/mpeg">
                                 Your browser does not support the audio element.
                             </audio>
                         </td>
-                        <td style="text-align: center;">this</td>
+                        <td>
+                            <audio class="audio-controls" controls>
+                                <source src="uaspeech/asa_paragraph.wav" type="audio/mpeg">
+                                Your browser does not support the audio element.
+                            </audio>
+                        </td>
+                        <td>
+                            <audio class="audio-controls" controls>
+                                <source src="uaspeech/unit_paragraph.wav" type="audio/mpeg">
+                                Your browser does not support the audio element.
+                            </audio>
+                        </td>
+                        <td style="text-align: center;">p En_ae r En_ax g r <span style="color: #ff0000;">En_aa</span></td>
+                        <td>
+                            <audio class="audio-controls" controls>
+                                <source src="uaspeech/paragraph_e2esdsr.wav" type="audio/mpeg">
+                                Your browser does not support the audio element.
+                            </audio>
+                        </td>
+                        <td style="text-align: center;">paragraph</td>
                     </tr>
                     <tr>
                         <td>M07_2</td>
                         <td>
                             <audio class="audio-controls" controls>
-                                <source src="uaspeech/M05_B3_UW85_M4.wav" type="audio/mpeg">
+                                <source src="uaspeech/original_watches.wav" type="audio/mpeg">
                                 Your browser does not support the audio element.
                             </audio>
                         </td>
                         <td>
                             <audio class="audio-controls" controls>
-                                <source src="uaspeech/M05_B3_UW85_M4_repair.wav" type="audio/mpeg">
+                                <source src="uaspeech/ee_watches.wav" type="audio/mpeg">
                                 Your browser does not support the audio element.
                             </audio>
                         </td>
-                        <td style="text-align: center;">flowers</td>
+                        <td>
+                            <audio class="audio-controls" controls>
+                                <source src="uaspeech/asa_watches.wav" type="audio/mpeg">
+                                Your browser does not support the audio element.
+                            </audio>
+                        </td>
+                        <td>
+                            <audio class="audio-controls" controls>
+                                <source src="uaspeech/unit_watches.wav" type="audio/mpeg">
+                                Your browser does not support the audio element.
+                            </audio>
+                        </td>
+                        <td style="text-align: center;">En_w En_aa <span style="color: #ff0000;">En_zh</span> En_ih z</td>
+                        <td>
+                            <audio class="audio-controls" controls>
+                                <source src="uaspeech/watches_e2esdsr.wav" type="audio/mpeg">
+                                Your browser does not support the audio element.
+                            </audio>
+                        </td>
+                        <td style="text-align: center;">watches</td>
                     </tr>
                     <tr>
                         <td>F02_1</td>
                         <td>
                             <audio class="audio-controls" controls>
-                                <source src="uaspeech/F02_B1_D0_M5.wav" type="audio/mpeg">
+                                <source src="uaspeech/original_escape.wav" type="audio/mpeg">
                                 Your browser does not support the audio element.
                             </audio>
                         </td>
                         <td>
                             <audio class="audio-controls" controls>
-                                <source src="uaspeech/F02_B1_D0_M5_repair.wav" type="audio/mpeg">
+                                <source src="uaspeech/ee_escape.wav" type="audio/mpeg">
                                 Your browser does not support the audio element.
                             </audio>
                         </td>
-                        <td style="text-align: center;">zero</td>
+                        <td>
+                            <audio class="audio-controls" controls>
+                                <source src="uaspeech/asa_escape.wav" type="audio/mpeg">
+                                Your browser does not support the audio element.
+                            </audio>
+                        </td>
+                        <td>
+                            <audio class="audio-controls" controls>
+                                <source src="uaspeech/unit_escape.wav" type="audio/mpeg">
+                                Your browser does not support the audio element.
+                            </audio>
+                        </td>
+                        <td style="text-align: center;"><span style="color: #ff0000;">En_ax</span> s k En_ey p</td>
+                        <td>
+                            <audio class="audio-controls" controls>
+                                <source src="uaspeech/escape_e2esdsr.wav" type="audio/mpeg">
+                                Your browser does not support the audio element.
+                            </audio>
+                        </td>
+                        <td style="text-align: center;">escape</td>
                     </tr>
                     <tr>
                         <td>F02_2</td>
                         <td>
                             <audio class="audio-controls" controls>
-                                <source src="uaspeech/F02_B1_CW88_M2.wav" type="audio/mpeg">
+                                <source src="uaspeech/original_sentence.wav" type="audio/mpeg">
                                 Your browser does not support the audio element.
                             </audio>
                         </td>
                         <td>
                             <audio class="audio-controls" controls>
-                                <source src="uaspeech/F02_B1_CW88_M2_repair.wav" type="audio/mpeg">
+                                <source src="uaspeech/ee_sentence.wav" type="audio/mpeg">
                                 Your browser does not support the audio element.
                             </audio>
                         </td>
-                        <td style="text-align: center;">now</td>
+                        <td>
+                            <audio class="audio-controls" controls>
+                                <source src="uaspeech/asa_sentence.wav" type="audio/mpeg">
+                                Your browser does not support the audio element.
+                            </audio>
+                        </td>
+                        <td>
+                            <audio class="audio-controls" controls>
+                                <source src="uaspeech/unit_sentence.wav" type="audio/mpeg">
+                                Your browser does not support the audio element.
+                            </audio>
+                        </td>
+                        <td style="text-align: center;">s En_eh n t En_ax n s</td>
+                        <td>
+                            <audio class="audio-controls" controls>
+                                <source src="uaspeech/sentence_e2esdsr.wav" type="audio/mpeg">
+                                Your browser does not support the audio element.
+                            </audio>
+                        </td>
+                        <td style="text-align: center;">sentence</td>
                     </tr>
                 </table>
             </div>
