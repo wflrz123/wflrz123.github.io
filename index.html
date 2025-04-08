@@ -70,11 +70,12 @@
         <main>
             <div class="text-container">
                 <h1>Abstract</h1>
-                <p style="font-size: 20px;">DSR typically employs a cascaded system that combines ASR and sentence-level TTS to convert dysarthric speech into normal one. Dysarthric patients speak slowly, leading to an excessively long response time in such systems. Cascaded DSR systems based on streaming ASR and incremental TTS can reduce these delays. However, patients with varying degrees of dysarthria exhibit significant pronunciation differences for the same text, resulting in poor robustness and limiting the intelligibility. In addition, incremental TTS suffers from poor prosodic feature prediction due to a limited receptive field. We propose an end-to-end simultaneous DSR system with two key innovations: 1) A frame-level adaptor is introduced to bridge ASR and TTS for improving the error tolerance. 2) A multiple wait-k autoregressive TTS is designed to mitigate prosodic degradation via multi-view knowledge distillation. On UASpeech, it achieves 4.67 MOS, showing a 23.51% relative improvement in WER compared to the SOTA.</p>
+                <p style="font-size: 20px;">Dysarthric speech reconstruction (DSR) typically employs a cascaded system that combines automatic speech recognition (ASR) and sentence-level text-to-speech (TTS) to convert dysarthric speech into speech with normal prosody. Dysarthric patients speak more slowly, leading to an excessively long response time in such systems, making them unacceptable in long-speech scenarios. Cascaded DSR systems based on streaming ASR and incremental TTS can reduce these delays. However, patients with varying degrees of dysarthria exhibit significant pronunciation differences for the same text, resulting in poor robustness of ASR and limiting the intelligibility of reconstructed speech. In addition, incremental TTS suffers from poor prosodic feature prediction due to a limited receptive field. In this study, we propose an end-to-end simultaneous DSR system with two key innovations: 1) A frame-level adaptor module is introduced to bridge ASR and TTS. By employing explicit-implicit semantic information fusion and joint module training, it enhances the error tolerance of TTS to ASR outputs. 2) A multiple wait-k autoregressive TTS module is designed to mitigate prosodic degradation via multi-view knowledge distillation. Our system has an average response time of 1.03 seconds on Tesla A100, with an average RTF of 0.71. On UASpeech, it achieves 4.67 MOS, showing a 23.51% relative improvement in WER compared to the SOTA.</p>
             </div>
             <h1>Diagram of Model</h1>
             <div class="image-container" style="text-align: center;">
                 <img src="model_new.png" alt="Model Diagram">
+                <figcaption class="image-caption">figure.End-to-end simultaneous DSR system</figcaption>
             </div>
             <div class="container">
                 <h1>Chinese commercial Test Set</h1>
@@ -698,7 +699,7 @@
                     </tr>
                 </table>
                 <div class="text-container">
-                    <p style="font-size: 20px;">Note: The parts highlighted in Conformer RNNT red indicate incorrectly recognized pinyin or phone.</p>
+                    <p style="font-size: 20px;">Note: The <span style="color: #ff0000;">red</span> parts highlighted in Conformer RNNT indicate incorrectly recognized pinyin or phone.</p>
                 </div>
             </div>
 <!--             <div class="container">
